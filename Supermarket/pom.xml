@@ -4,4 +4,11 @@
   <artifactId>supermarket</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Supermarket</name>
+  <dependencies>
+  	<dependency>
+  		<groupId>info.cukes</groupId>
+  		<artifactId>cucumber-junit</artifactId>
+  		<version>1.2.5</version>
+  	</dependency>
+  </dependencies>
 </project>
