@@ -1,12 +1,15 @@
 package fun;
 
-import cucumber.api.PendingException;
+import org.junit.Assert;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+
 public class CheckoutSteps {
 	int bananaPrice = 0;
+	Checkout checkout;
 	
 	@Given("^the price of a \"([^\"]*)\" is (\\d+)c$")
 	public void thePriceOfAIsC(String name, int price) throws Throwable {
@@ -15,13 +18,12 @@ public class CheckoutSteps {
 
 	@When("^I checkout (\\d+) \"([^\"]*)\"$")
 	public void iCheckout(int itemCount, String name) throws Throwable {
-	    Checkout checkout = new Checkout();
+		checkout = new Checkout();
 	    checkout.add(itemCount, bananaPrice);
 	}
 
 	@Then("^the total price should be (\\d+)c$")
-	public void theTotalPriceShouldBeC(int arg1) throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	public void theTotalPriceShouldBeC(int total) throws Throwable {
+	    Assert.assertEquals(total, checkout.total());
 	}
 }
