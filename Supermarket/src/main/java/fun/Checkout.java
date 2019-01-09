@@ -1,7 +1,11 @@
 package fun;
 
+import java.util.HashMap;
+
 public class Checkout {
 	int total = 0;
+	
+	HashMap<String, Integer> itemPrices = new HashMap();
 	
 	public void add(int count, int price) {
 		total += (count * price);
@@ -9,5 +13,14 @@ public class Checkout {
 
 	public int total() {
 		return total;
+	}
+
+	public void setItemPrice(String name, int price) {
+		itemPrices.put(name, price);
+	}
+
+	public int getItemPrice(String name) {
+		// TODO Auto-generated method stub
+		return itemPrices.get(name).intValue();
 	}
 }
