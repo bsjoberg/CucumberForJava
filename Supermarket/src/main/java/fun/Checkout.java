@@ -20,7 +20,6 @@ public class Checkout {
 	}
 
 	public int getItemPrice(String name) {
-		// TODO Auto-generated method stub
 		return itemPrices.get(name).intValue();
 	}
 }
