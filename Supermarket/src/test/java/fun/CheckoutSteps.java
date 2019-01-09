@@ -10,6 +10,10 @@ public class CheckoutSteps {
 	int bananaPrice = 0;
 	Checkout checkout;
 	
+	public CheckoutSteps() {
+		checkout = new Checkout();
+	}
+	
 	@Given("^the price of a \"([^\"]*)\" is (\\d+)c$")
 	public void thePriceOfAIsC(String name, int price) throws Throwable {
 	    bananaPrice = price;
@@ -17,8 +21,7 @@ public class CheckoutSteps {
 
 	@When("^I checkout (\\d+) \"([^\"]*)\"$")
 	public void iCheckout(int itemCount, String name) throws Throwable {
-		checkout = new Checkout();
-	    checkout.add(itemCount, bananaPrice);
+		checkout.add(itemCount, bananaPrice);
 	}
 
 	@Then("^the total price should be (\\d+)c$")
